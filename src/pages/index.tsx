@@ -1,4 +1,5 @@
 import { GetStaticProps } from 'next';
+import { FaCalendar, FaUser } from 'react-icons/fa';
 
 import { getPrismicClient } from '../services/prismic';
 
@@ -24,11 +25,53 @@ interface HomeProps {
   postsPagination: PostPagination;
 }
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
-    <>
-      <h1>Hello</h1>
-    </>
+    <main className={styles.homeContainer}>
+      <section className={styles.homeContent}>
+        <div className={styles.post}>
+          <h1> Como utilizar Hooks </h1>
+          <p>Pensando em sincronização em vez de ciclos de vida</p>
+          <div>
+            <time>
+              <FaCalendar className={styles.icon} /> 15 Mar 2021
+            </time>
+            <span>
+              <FaUser className={styles.icon} />
+              Lucas
+            </span>
+          </div>
+        </div>
+
+        <div className={styles.post}>
+          <h1> Como utilizar Hooks </h1>
+          <p>Pensando em sincronização em vez de ciclos de vida</p>
+          <div>
+            <time>
+              <FaCalendar className={styles.icon} /> 15 Mar 2021
+            </time>
+            <span>
+              <FaUser className={styles.icon} />
+              Lucas
+            </span>
+          </div>
+        </div>
+
+        <div className={styles.post}>
+          <h1> Como utilizar Hooks </h1>
+          <p>Pensando em sincronização em vez de ciclos de vida</p>
+          <div>
+            <time>
+              <FaCalendar className={styles.icon} /> 15 Mar 2021
+            </time>
+            <span>
+              <FaUser className={styles.icon} />
+              Lucas
+            </span>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
 
