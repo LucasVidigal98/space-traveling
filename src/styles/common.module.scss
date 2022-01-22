@@ -1,1 +1,23 @@
 // TODO
+.icon {
+  margin-right: 0.5rem;
+}
+
+.info {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+
+  color: var(--info);
+
+  time {
+    margin-right: 1.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+  }
+}

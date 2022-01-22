@@ -1,1 +1,39 @@
 // TODO
+.postContainer {
+  header {
+    img {
+      width: 100%;
+      height: 440px;
+    }
+  }
+
+  .postContent {
+    max-width: 1120px;
+    margin: 0 auto;
+
+    .postHeading {
+      margin-top: 4rem;
+
+      h1 {
+        font-weight: 700;
+        font-size: 3rem;
+        color: var(--heading);
+      }
+    }
+
+    .content {
+      margin-top: 3rem;
+      h2 {
+        font-weight: 700;
+        font-size: 2rem;
+        color: var(--heading);
+      }
+
+      p {
+        color: var(--body);
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

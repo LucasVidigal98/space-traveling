@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import { GetStaticProps } from 'next';
 import { FaCalendar, FaUser } from 'react-icons/fa';
+import Link from "next/link";
 
 import Prismic from '@prismicio/client';
 import { getPrismicClient } from '../services/prismic';
@@ -32,19 +33,21 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
     <main className={styles.homeContainer}>
       <section className={styles.homeContent}>
         {postsPagination.results.map(post => (
-          <div key={post.uid} className={styles.post}>
-            <h1> {post.data.title} </h1>
-            <p>{post.data.subtitle}</p>
-            <div>
-              <time>
-                <FaCalendar className={styles.icon} /> { post.first_publication_date }
-              </time>
-              <span>
-                <FaUser className={styles.icon} />
-                {post.data.author}
-              </span>
+          <Link key={post.uid} href={`/post/${post.uid}`}>
+            <div className={styles.post}>
+              <h1> {post.data.title} </h1>
+              <p>{post.data.subtitle}</p>
+              <div className={commonStyles.info}>
+                <time>
+                  <FaCalendar className={commonStyles.icon} /> { post.first_publication_date }
+                </time>
+                <span>
+                  <FaUser className={commonStyles.icon} />
+                  {post.data.author}
+                </span>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </section>
     </main>
@@ -68,7 +71,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   postsPagination.results = postsResponse.results.map(postData => {
     return {
-      uuid: postData.uid,
+      uid: postData.uid,
       first_publication_date: new Date(postData.first_publication_date.toString()).toLocaleString('pt-BR', {
         day: 'numeric',
         month: 'short',

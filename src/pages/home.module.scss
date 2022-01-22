@@ -33,27 +33,5 @@
       margin-top: 0.5rem;
       margin-bottom: 1rem;
     }
-
-    div {
-      display: flex;
-      align-items: center;
-
-      color: var(--info);
-
-      .icon {
-        margin-right: 0.5rem;
-      }
-
-      time {
-        margin-right: 1.5rem;
-        display: flex;
-        align-items: center;
-      }
-
-      span {
-        display: flex;
-        align-items: center;
-      }
-    }
   }
 }
