@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { FaCalendar, FaUser } from 'react-icons/fa';
+import { FiCalendar, FiUser } from 'react-icons/fi';
 
 import Prismic from '@prismicio/client';
 import { getPrismicClient } from '../../services/prismic';
@@ -42,12 +42,12 @@ export default function Post({ post }: PostProps): JSX.Element {
           <div className={commonStyles.info}>
             <time>
               {' '}
-              <FaCalendar className={commonStyles.icon} />{' '}
+              <FiCalendar className={commonStyles.icon} />{' '}
               {post.first_publication_date}{' '}
             </time>
 
             <span>
-              <FaUser className={commonStyles.icon} /> {post.data.author}
+              <FiUser className={commonStyles.icon} /> {post.data.author}
             </span>
           </div>
         </div>
